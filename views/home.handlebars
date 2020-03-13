@@ -1,0 +1,19 @@
+<h1>Home</h1>
+<div>
+    <a href="/upload">Upload</a>
+    <a href="/signup">Signup</a>
+    <a href="/login">Login</a>
+    <a href="/logout">Logout</a>
+</div>
+{{#each entries}}
+<h2>{{fmtDate}}</h2>
+{{#if isVideo}}
+<video controls width="250">
+    <source src="{{ src }}" />
+</video>
+{{/if}}
+{{#unless isVideo}}
+    <img src="{{ src }}" alt="image" />
+{{/unless}}
+<hr />
+{{/each}}
